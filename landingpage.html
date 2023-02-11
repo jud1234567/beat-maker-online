@@ -86,7 +86,7 @@
 	  
 	  var sources = [
 		new Audio("Sounds/Snare-Drum.mp3"),
-		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/grump-92690.mp3"),//Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=92690">Pixabay</a>
 		new Audio("Sounds/Snare-Drum.mp3"),
 		new Audio("Sounds/Snare-Drum.mp3"),
 		new Audio("Sounds/Snare-Drum.mp3"),
@@ -94,9 +94,17 @@
 		new Audio("Sounds/Snare-Drum.mp3"),
 		new Audio("Sounds/Snare-Drum.mp3"),
 	  ];
-		console.log(sources[1]);
-	    for(var i = 0; i < buttons.length; i++){
-	      buttons[i].addEventListener("mousedown", function(){sources[i-1].load();sources[i-1].play();console.log("hi")})
+		
+	    for(var i = 0; i < keyMappings.length; i++){
+		  console.log(buttons[i]);
+	      console.log(sources[i]);
+	      buttons[i].addEventListener("keydown", function(){console.log(this.key);sources[keyMappings.indexOf(event.key)].currentTime = 0;sources[keyMappings.indexOf(event.key)].play();console.log("hi")})
+		}
+		
+		for(var i = 0; i < buttons.length; i++){
+		  console.log(buttons[i]);
+	      console.log(sources[i]);
+	      buttons[i].addEventListener("mousedown", function(){sources[buttons.indexOf(this)].currentTime = 0;sources[buttons.indexOf(this)].play();console.log("hi")})
 		}
 	  class BeatSignal{
 	  
