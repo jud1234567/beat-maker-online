@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+	  body{
+	    height: 100vh;
+	    font-family: "Monaco", "Lucida", monospace;
+		color: rgb(46, 46, 54);
+	    background-color: rgb(208, 211, 245);
+		padding: 0%;
+	    margin: 0%;
+		border: 0px solid #000;
+	  }
+	  .pageHeader{
+	    height: 10%;
+		width: 100%;
+		background-color: rgb(154, 156, 181);
+		margin-top: 0px;
+	  }
+	  .headerElements{
+	    float: left;
+		margin:20px;
+		height:40px;
+	  }
+	  .beatButtonRow{
+		height:50%;
+		width: 100vh;
+		display: block;
+	  }
+	  .beatButton{
+	    width: 24%;
+		margin: 2px;
+		float:left;
+		border-radius: 5px;
+		height: 85%;
+	  }
+	</style>
+  </head>
+  <body>
+    <header class="pageHeader">
+	  <div class="headerElements">
+	    <h1 style="margin:0px">
+		  Beat Machine Online
+	    </h1>
+	  </div>
+	  <button class="headerElements">
+	    Click
+	  </button>
+	</header>
+    <div style="margin:10px;margin-top:50px;height: 20vh" class="beatButtonContainer">
+	  <div class="beatButtonRow">
+	    <button id="b01" class="beatButton">pad</button>
+		<button id="b02" class="beatButton">pad</button>
+		<button id="b03" class="beatButton">pad</button>
+		<button id="b04" class="beatButton">pad</button>
+	  </div>
+	  <div class="beatButtonRow">
+	    <button id="b05" class="beatButton">pad</button>
+		<button id="b06" class="beatButton">pad</button>
+		<button id="b07" class="beatButton">pad</button>
+		<button id="b08" class="beatButton">pad</button>
+	  </div>
+	<div>
+    <script>
+	  var buttons = [
+        document.getElementById("b01"),
+		document.getElementById("b02"),
+		document.getElementById("b03"),
+		document.getElementById("b04"),
+		document.getElementById("b05"),
+		document.getElementById("b06"),
+		document.getElementById("b07"),
+		document.getElementById("b08")
+	  ]
+	  
+	  var keyMappings = [
+		"q",
+		"w",
+		"e",
+		"r",
+		"a",
+		"s",
+		"d",
+		"f",
+	  ]
+	  
+	  var sources = [
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+		new Audio("Sounds/Snare-Drum.mp3"),
+	  ];
+		console.log(sources[1]);
+	    for(var i = 0; i < buttons.length; i++){
+	      buttons[i].addEventListener("mousedown", function(){sources[i-1].load();sources[i-1].play();console.log("hi")})
+		}
+	  class BeatSignal{
+	  
+	  }
+	  //var getElementById();
+	</script>
+  </body>
+</html>
